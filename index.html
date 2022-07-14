@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn chinese</title>
+
+    <link href="main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 pt-10 h-screen text-white">
+  <div class="flex justify-center">
+    <div x-data="loadFile()" class="md:w-2/4 w-full border-2 border-green-500 p-2">
+      <div class="flex flex-col gap-y-2">
+          <div class=" basis-full text-center">
+            <select class="form-select appearance-none
+              p-2
+              w-full
+              text-center
+              font-normal
+              bg-clip-padding bg-no-repeat
+              bg-gray-800
+              border-4 border-double border-green-500
+              transition
+              ease-in-out
+              m-0
+              focus:bg-bg-gray-800 focus:border-green-500 focus:outline-none" aria-label="Default select example">
+                <template x-for="item in charper_list">
+                  <option class="bg-gray-800" :value="item.value" selected="item.value === selectedCharper x-text="item.text">Charper 1</option>
+                </template>
+            </select>
+          </div>
+          <div class=" basis-full text-center">
+            <select x-on:change="selectGrammar($event.target.value)" class="form-select appearance-none
+              p-2
+              w-full
+              text-center
+              font-normal
+              bg-clip-padding bg-no-repeat
+              bg-gray-800
+              border-4 border-double border-green-500
+              transition
+              ease-in-out
+              m-0
+              focus:bg-bg-gray-800 focus:border-green-500 focus:outline-none" aria-label="Default select example">
+                <template x-for="item in grammar_list">
+                  <option class="bg-gray-800" :value="item.value" :selected="item.value === selectedGrammar" x-text="item.text">Charper 1</option>
+                </template>
+            </select>
+          </div>
+          <div class="basis-full border-2 border-dotted border-green-500">
+            <div class="flex flex-row h-16 border-b-2 border-dotted border-green-500">
+              <div class="basis-1/6 flex-none p-1">
+                <div class="h-full  text-center flex justify-center items-center">
+                  <div>CH</div>
+                </div>
+              </div>
+              <div class="flex-grow border-x-2 border-dotted border-green-500">
+                <div class="h-full text-center flex justify-center items-center">
+                  <div x-text="current" class="text-2xl"></div>
+                </div>
+              </div>
+              <div class="basis-1/6 flex-none p-1">
+                <div class="h-full border-2 border-dotted border-green-500 text-center flex justify-center items-center">
+                  <div class="md:text-base text-xs">Show</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row h-16">
+              <div class="basis-1/6 flex-none p-1">
+                <div class="h-full text-center flex justify-center items-center">
+                  <div>EN</div>
+                </div>
+              </div>
+              <div class="flex-grow border-x-2 border-dotted border-green-500" >
+                <div class="h-full text-center flex justify-center items-center">
+                  <div x-text="(hideEn) ? 'x'.repeat(current_english.length) : current_english" class="text-2xl"></div>
+                </div>
+              </div>
+              <div class="basis-1/6 flex-none p-1">
+                <div class="h-full border-2 border-dotted border-green-500 text-center flex justify-center items-center">
+                  <div class="md:text-base text-xs" @click="hideEn = false">Show</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div @click="next" :disabled="nextDisabled" x-show="showNext" class="basis-full p-2 bg-green-500 text-center">
+            <div>Next</div>
+          </div>
+          <div @click="read" x-show="showReset" class="basis-full p-2 bg-green-500 text-center">
+            <div>Reset</div>
+          </div>
+      </div>
+    </div>
+    <!-- <div x-data="loadFile()" class="md:w-2/4 w-5/6">
+      <div class="flex flex-row m-1">
+        <div class="p-2 rounded-sm" :class="selectedGrammar === 'verb' ? 'bg-green-500' : ''" @click="selectGrammar('verb')" x-cloak>Verb</div>
+        <div class="p-2 rounded-sm" :class="selectedGrammar === 'noun' ? 'bg-green-500' : ''"  @click="selectGrammar('noun')">Noun</div>
+      </div>
+      <div class="border-2 border-green-500 rounded p-4 text-green-500">
+        <div class="flex flex-row">
+          <div class="font-extrabold text-2xl font-mono" x-text="current"></div>
+          <div class="ml-4 font-extrabold text-2xl font-mono" x-text="current_english"></div>
+          <div class="grow"></div>
+          <div>
+            <button class="bg-green-500 right-0" @click="next" :disabled="nextDisabled" x-show="showNext">Next</button>
+          </div>
+          <div>
+            <button @click="read" x-show="showReset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>  
+  <script defer src="script.js"></script>
+  <script>
+    function loadFile() {
+      return {
+        current: '',
+        current_english: '',
+        current_index: 0,
+        vocabulary: [], 
+        nextDisabled: true,
+        showReset: false,
+        showNext: true,
+        selectedGrammar: 'verb',
+        selectedCharper: 'charper_1',
+        hideCh: false,
+        hideEn: true,
+        grammar_list: [
+          {value: "verb", text: 'Verbs'},
+          {value: "noun", text: 'Nouns'}
+        ],
+        charper_list: [
+          {value: "charper_1", text: 'Charper 1'}
+        ],
+        init() {
+          this.read()
+        },
+        read() {
+          this.clear()
+          fetch('charper1.json')
+          .then(response => response.json())
+          .then(text => this.filter(text))
+        },
+        filter(rows) {
+          console.log('fliter: ' + this.selectedGrammar)
+          this.vocabulary = rows.filter(row => row.categories.includes(this.selectedGrammar))
+          this.nextDisabled = false;
+        },
+        parse(text) {
+          return new Promise((resolve, reject) => {
+            resolve(text.split(/\r\n|\n/));
+          });
+        },
+        next() {
+          this.hideEn = true
+          if (this.vocabulary.length > this.current_index) {
+            this.showReset = false
+            let index = this.current_index++
+            this.current = this.vocabulary[index].chinese
+            this.current_english = this.vocabulary[index].english
+          } else {
+            this.showReset = true
+            this.showNext = false
+          }
+        },
+        selectGrammar(grammar) {
+          this.selectedGrammar = grammar
+          this.read()
+        },
+        clear() {
+          this.nextDisabled = true
+          this.showReset = false
+          this.current = ''
+          this.current_english = ''
+          this.current_index = 0
+          this.showNext = true
+          this.hideEn = true
+          this.hideCh = false
+        }
+      } 
+    }
+  </script>
+</body>
+</html>
