@@ -66,7 +66,7 @@
             </select>
           </div>
           <div class="basis-full border-2 border-dotted border-green-500">
-            <div class="flex flex-row h-16 border-b-2 border-dotted border-green-500">
+            <div class="flex flex-row min-h-[4rem] border-b-2 border-dotted border-green-500">
               <div class="basis-1/6 flex-none p-1">
                 <div class="h-full  text-center flex justify-center items-center">
                   <div>CH</div>
@@ -74,7 +74,7 @@
               </div>
               <div class="flex-grow border-x-2 border-dotted border-green-500">
                 <div class="h-full text-center flex justify-center items-center">
-                  <div x-text="(hideCh) ? 'x'.repeat(current.length) : current" x-text="current" class="text-2xl"></div>
+                  <div x-text="(hideCh) ? 'x'.repeat(current.length) : current" x-text="current" class="md:text-2xl text-xs break-all"></div>
                 </div>
               </div>
               <div class="basis-1/6 flex-none p-1">
@@ -83,7 +83,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-row h-16">
+            <div class="flex flex-row min-h-[4rem]">
               <div class="basis-1/6 flex-none p-1">
                 <div class="h-full text-center flex justify-center items-center">
                   <div>EN</div>
@@ -91,7 +91,7 @@
               </div>
               <div class="flex-grow border-x-2 border-dotted border-green-500" >
                 <div class="h-full text-center flex justify-center items-center">
-                  <div x-text="(hideEn) ? 'x'.repeat(current_english.length) : current_english" class="text-2xl"></div>
+                  <div x-text="(hideEn) ? 'x'.repeat(current_english.length) : current_english" class="md:text-2xl text-xs break-all"></div>
                 </div>
               </div>
               <div class="basis-1/6 flex-none p-1">
@@ -109,25 +109,6 @@
           </div>
       </div>
     </div>
-    <!-- <div x-data="loadFile()" class="md:w-2/4 w-5/6">
-      <div class="flex flex-row m-1">
-        <div class="p-2 rounded-sm" :class="selectedGrammar === 'verb' ? 'bg-green-500' : ''" @click="selectGrammar('verb')" x-cloak>Verb</div>
-        <div class="p-2 rounded-sm" :class="selectedGrammar === 'noun' ? 'bg-green-500' : ''"  @click="selectGrammar('noun')">Noun</div>
-      </div>
-      <div class="border-2 border-green-500 rounded p-4 text-green-500">
-        <div class="flex flex-row">
-          <div class="font-extrabold text-2xl font-mono" x-text="current"></div>
-          <div class="ml-4 font-extrabold text-2xl font-mono" x-text="current_english"></div>
-          <div class="grow"></div>
-          <div>
-            <button class="bg-green-500 right-0" @click="next" :disabled="nextDisabled" x-show="showNext">Next</button>
-          </div>
-          <div>
-            <button @click="read" x-show="showReset">Reset</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>  
   <script defer src="script.js"></script>
   <script>
@@ -142,7 +123,7 @@
         showReset: false,
         showNext: true,
         selectedGrammar: 'all',
-        selectedCharper: 'charper1',
+        selectedCharper: 'charper4',
         hideCh: false,
         hideEn: true,
         grammar_list: [
