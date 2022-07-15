@@ -1,0 +1,247 @@
+[
+    {
+        "chinese": "yǐhòu",
+        "english": "after",
+        "categories": [
+            "adverb",
+            ""
+        ]
+    },
+    {
+        "chinese": "dǎdiànhuà",
+        "english": "to make a phone call",
+        "categories": [
+            "verb object",
+            "verb"
+        ]
+    },
+    {
+        "chinese": "diànhuà",
+        "english": "telephone,call",
+        "categories": [
+            "noun",
+            "home"
+        ]
+    },
+    {
+        "chinese": "jiè",
+        "english": "to borrow, to lend",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "yǐqián",
+        "english": "before,ago",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "dàgài",
+        "english": "probably",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "máfán",
+        "english": "to be annoyed",
+        "categories": [
+            "satative verb",
+            "verb",
+            "noun",
+            "expression"
+        ]
+    },
+    {
+        "chinese": "fán",
+        "english": "to annoy",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "gàosù",
+        "english": "to tell, to inform",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "guò",
+        "english": "a suffix indicating completion of an action",
+        "categories": [
+            "particle"
+        ]
+    },
+    {
+        "chinese": "jìdé",
+        "english": " to remmeber",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "jì",
+        "english": "to record, to write",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "zhōngxué",
+        "english": "middle school",
+        "categories": [
+            "noun",
+            "building"
+        ]
+    },
+    {
+        "chinese": "yòu",
+        "english": "again(in the past)",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "rènshì",
+        "english": "to recongnize, to realize",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "rèndè",
+        "english": "to know (as in recognize)",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "cì",
+        "english": "measure word for time",
+        "categories": [
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "běnlái",
+        "english": "originally",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "hòulái",
+        "english": "afterwards, later on",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "kǒngpà",
+        "english": "im affraid, perhaps",
+        "categories": [
+            "adverb",
+            "expression"
+        ]
+    },
+    {
+        "chinese": "pà",
+        "english": "to fear",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "juédìng",
+        "english": "to decide",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "jiē",
+        "english": "to receive, to meet",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "jiànmiàn",
+        "english": "to meet someone",
+        "categories": [
+            "verb object"
+        ]
+    },
+    {
+        "chinese": "liú",
+        "english": "to leave a messaage o thing, to stay",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "hàomǎ",
+        "english": "number",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "cóngcián",
+        "english": "formerly, in the past, used to",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "xǐ",
+        "english": "to wash",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "shǒu",
+        "english": "hand",
+        "categories": [
+            "noun",
+            "body"
+        ]
+    },
+    {
+        "chinese": "gāoxìng",
+        "english": "to be happy",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "shuāng",
+        "english": "measure word for hands",
+        "categories": [
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "tóu",
+        "english": "head",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "yóuchāi",
+        "english": "postman",
+        "categories": [
+            "noun",
+            "job"
+        ]
+    },
+    {
+        "chinese": "",
+        "categories": []
+    }
+]

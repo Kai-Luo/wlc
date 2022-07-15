@@ -13,7 +13,7 @@
     <div x-data="loadFile()" class="md:w-2/4 w-full border-2 border-green-500 p-2">
       <div class="flex flex-col gap-y-2">
           <div class=" basis-full text-center">
-            <select class="form-select appearance-none
+            <select x-on:change="selectCharper($event.target.value)" class="form-select appearance-none
               p-2
               w-full
               text-center
@@ -26,7 +26,7 @@
               m-0
               focus:bg-bg-gray-800 focus:border-green-500 focus:outline-none" aria-label="Default select example">
                 <template x-for="item in charper_list">
-                  <option class="bg-gray-800" :value="item.value" selected="item.value === selectedCharper x-text="item.text">Charper 1</option>
+                  <option class="bg-gray-800" :value="item.value" :selected="item.value === selectedCharper" x-text="item.text"></option>
                 </template>
             </select>
           </div>
@@ -48,6 +48,23 @@
                 </template>
             </select>
           </div>
+          <div class=" basis-full text-center">
+            <select x-on:change="selectHideLang($event.target.value)" class="form-select appearance-none
+              p-2
+              w-full
+              text-center
+              font-normal
+              bg-clip-padding bg-no-repeat
+              bg-gray-800
+              border-4 border-double border-green-500
+              transition
+              ease-in-out
+              m-0
+              focus:bg-bg-gray-800 focus:border-green-500 focus:outline-none" aria-label="">
+                <option class="bg-gray-800" value="en" selected>EN</option>
+                <option class="bg-gray-800" value="ch" >CH</option>
+            </select>
+          </div>
           <div class="basis-full border-2 border-dotted border-green-500">
             <div class="flex flex-row h-16 border-b-2 border-dotted border-green-500">
               <div class="basis-1/6 flex-none p-1">
@@ -57,12 +74,12 @@
               </div>
               <div class="flex-grow border-x-2 border-dotted border-green-500">
                 <div class="h-full text-center flex justify-center items-center">
-                  <div x-text="current" class="text-2xl"></div>
+                  <div x-text="(hideCh) ? 'x'.repeat(current.length) : current" x-text="current" class="text-2xl"></div>
                 </div>
               </div>
               <div class="basis-1/6 flex-none p-1">
                 <div class="h-full border-2 border-dotted border-green-500 text-center flex justify-center items-center">
-                  <div class="md:text-base text-xs">Show</div>
+                  <div class="md:text-base text-xs" @click="hideCh = false">Show</div>
                 </div>
               </div>
             </div>
@@ -119,33 +136,42 @@
         current: '',
         current_english: '',
         current_index: 0,
+        current_hide: 'EN',
         vocabulary: [], 
         nextDisabled: true,
         showReset: false,
         showNext: true,
-        selectedGrammar: 'verb',
-        selectedCharper: 'charper_1',
+        selectedGrammar: 'all',
+        selectedCharper: 'charper1',
         hideCh: false,
         hideEn: true,
         grammar_list: [
           {value: "verb", text: 'Verbs'},
-          {value: "noun", text: 'Nouns'}
+          {value: "noun", text: 'Nouns'},
+          {value: "all", text: 'All'}
         ],
         charper_list: [
-          {value: "charper_1", text: 'Charper 1'}
+          {value: "charper1", text: 'Charper 1'},
+          {value: "charper2", text: 'Charper 2'},
+          {value: "charper3", text: 'Charper 3'},
+          {value: "charper4", text: 'Charper 4'}
         ],
         init() {
           this.read()
         },
         read() {
           this.clear()
-          fetch('charper1.json')
+          fetch(this.selectedCharper + '.json')
           .then(response => response.json())
           .then(text => this.filter(text))
+          .then(() => this.next())
         },
         filter(rows) {
-          console.log('fliter: ' + this.selectedGrammar)
-          this.vocabulary = rows.filter(row => row.categories.includes(this.selectedGrammar))
+          if(this.selectedGrammar != 'all') {
+            this.vocabulary = rows.filter(row => row.categories.includes(this.selectedGrammar))
+          } else {
+            this.vocabulary = rows;
+          }
           this.nextDisabled = false;
         },
         parse(text) {
@@ -154,7 +180,7 @@
           });
         },
         next() {
-          this.hideEn = true
+          this.hideLang();
           if (this.vocabulary.length > this.current_index) {
             this.showReset = false
             let index = this.current_index++
@@ -169,6 +195,23 @@
           this.selectedGrammar = grammar
           this.read()
         },
+        selectCharper(charper) {
+          this.selectedCharper = charper
+          this.read()
+        },
+        selectHideLang(lang) {
+          this.current_hide = lang
+          this.read()
+        },
+        hideLang() {
+          if(this.current_hide == 'EN') {
+            this.hideEn = true;
+            this.hideCh = false;
+          } else {
+            this.hideEn = false;
+            this.hideCh = true;
+          }
+        },
         clear() {
           this.nextDisabled = true
           this.showReset = false
@@ -176,8 +219,8 @@
           this.current_english = ''
           this.current_index = 0
           this.showNext = true
-          this.hideEn = true
-          this.hideCh = false
+          // this.hideEn = true
+          // this.hideCh = false
         }
       } 
     }
