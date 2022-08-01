@@ -101,11 +101,18 @@
               </div>
             </div>
           </div>
-          <div @click="next" :disabled="nextDisabled" x-show="showNext" class="basis-full p-2 bg-green-500 text-center">
-            <div>Next</div>
+          <div x-show="showNext" class="flex flex-row">
+            <div @click="prev" :disabled="nextDisabled"  class="flex-1 p-2 mr-1 bg-green-500 text-center">
+              <div>Prev</div>
+            </div>
+            <div @click="next" :disabled="nextDisabled"  class="flex-1 p-2 ml-1 bg-green-500 text-center">
+              <div>Next</div>
+            </div>
           </div>
-          <div @click="read" x-show="showReset" class="basis-full p-2 bg-green-500 text-center">
-            <div>Reset</div>
+          <div x-show="showReset" class="flex flex-row">
+            <div @click="read" class="flex-1 p-2 bg-green-500 text-center">
+              <div>Reset</div>
+            </div>
           </div>
       </div>
     </div>
@@ -116,14 +123,14 @@
       return {
         current: '',
         current_english: '',
-        current_index: 0,
-        current_hide: 'EN',
+        current_index: null,
+        current_hide: 'en',
         vocabulary: [], 
         nextDisabled: true,
         showReset: false,
         showNext: true,
         selectedGrammar: 'all',
-        selectedCharper: 'charper4',
+        selectedCharper: 'chapter1',
         hideCh: false,
         hideEn: true,
         grammar_list: [
@@ -132,10 +139,11 @@
           {value: "all", text: 'All'}
         ],
         charper_list: [
-          {value: "charper1", text: 'Charper 1'},
-          {value: "charper2", text: 'Charper 2'},
-          {value: "charper3", text: 'Charper 3'},
-          {value: "charper4", text: 'Charper 4'}
+          {value: "chapter1", text: 'chapter 1'},
+          {value: "chapter2", text: 'chapter 2'},
+          {value: "chapter3", text: 'chapter 3'},
+          {value: "chapter4", text: 'chapter 4'},
+          {value: "chapter5", text: 'chapter 5'}
         ],
         init() {
           this.read()
@@ -162,14 +170,24 @@
         },
         next() {
           this.hideLang();
-          if (this.vocabulary.length > this.current_index) {
+          if (this.vocabulary.length - 1 > this.current_index) {
+            (this.current_index === null)? this.current_index = 0 : this.current_index++;
             this.showReset = false
-            let index = this.current_index++
-            this.current = this.vocabulary[index].chinese
-            this.current_english = this.vocabulary[index].english
+            this.current = this.vocabulary[this.current_index].chinese
+            this.current_english = this.vocabulary[this.current_index].english
           } else {
             this.showReset = true
             this.showNext = false
+          }
+        },
+        prev() {
+          this.hideLang();
+          if (this.current_index >= 1) {
+            this.showReset = false
+            this.showNext = true
+            this.current_index--
+            this.current = this.vocabulary[this.current_index].chinese
+            this.current_english = this.vocabulary[this.current_index].english
           }
         },
         selectGrammar(grammar) {
@@ -185,7 +203,7 @@
           this.read()
         },
         hideLang() {
-          if(this.current_hide == 'EN') {
+          if(this.current_hide == 'en') {
             this.hideEn = true;
             this.hideCh = false;
           } else {
@@ -198,7 +216,7 @@
           this.showReset = false
           this.current = ''
           this.current_english = ''
-          this.current_index = 0
+          this.current_index = null
           this.showNext = true
           // this.hideEn = true
           // this.hideCh = false

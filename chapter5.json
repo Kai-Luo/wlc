@@ -1,0 +1,328 @@
+[
+    {
+        "chinese": "huáyǔ",
+        "english": "chinese language",
+        "sentence": "Tā huè shuō huáyǔ",
+        "english_sentence": "He speaks chinese",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "yǔ",
+        "english": "language",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "bf"
+        ]
+    },
+    {
+        "chinese": "yìyàng",
+        "english": " to be the same",
+        "sentence": "Zhè liǎngzhī bǐ yíyàng",
+        "english_sentence": " These two pens are indentical",
+        "categories": [
+            " adverb",
+            " stative verb"
+        ]
+    },
+    {
+        "chinese": "yàngzi",
+        "english": "apperance, shape",
+        "sentence": "Zhèijiàn yīfù yànzi hěn hǎokàn",
+        "english_sentence": " The pattern of this outfit is very beautiful",
+        "categories": [
+            "noun "
+        ]
+    },
+    {
+        "chinese": "shìjiè",
+        "english": "the world",
+        "sentence": "Shìjièshàng zuì gāode dàlóu zài nǎlǐ",
+        "english_sentence": "Where is the tallest building in the world?",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "yǔyán",
+        "english": "language",
+        "sentence": "Shìjièshàng zuì nánxuéde yǔyán shì něiguó huà",
+        "english_sentence": "Wich country has the world's most difficult language to learn?",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "yǔfá",
+        "english": "grammar",
+        "sentence": "Huáyǔde yǔfá bùnán",
+        "english_sentence": " Chinese grammar is not difficult",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "bàfǎn",
+        "english": "method, way of doing something",
+        "sentence": "Tā shūode zhèige bànfǎn búcuò",
+        "english_sentence": " The method he just stated is pretty good",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "bǐ",
+        "english": "to compare",
+        "sentence": "Qǐng nǐ bǐyibǐ zhè liǎngge dìfāngde tiānqì",
+        "english_sentence": " Please compare the climate of there two areas",
+        "categories": [
+            "verb",
+            ""
+        ]
+    },
+    {
+        "chinese": "xiàng",
+        "english": "to be alike",
+        "sentence": "Wǒ gēn wǒ fùqīn hén xiàng",
+        "english_sentence": " I'm a lot like my father",
+        "categories": [
+            "verb",
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "yíqiè",
+        "english": "all, everything",
+        "sentence": "Wǒ yíqiè dōu hǎo, qǐng nín fàngxīn",
+        "english_sentence": " I'm completely fine, please relax",
+        "categories": [
+            " noun "
+        ]
+    },
+    {
+        "chinese": "hǎoxiàng",
+        "english": "to seem, to be likely",
+        "sentence": "Tā hǎoxiàng hěn gāoxǐng",
+        "english_sentence": " He seems very happy",
+        "categories": [
+            "verb"
+        ]
+    },
+    {
+        "chinese": "shòu",
+        "english": "to be thin",
+        "sentence": "Tiānqì tài rè, wǒ chīde hěn shǎo, sǔoyǐ shòule",
+        "english_sentence": " The wheather is too hot, I've been eating less so Ihave become  thinner",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "bǐjiào",
+        "english": "to compare",
+        "sentence": "Jīntiān hǎoxiàng bǐjiào lěng",
+        "english_sentence": "Seems like it's colder today",
+        "categories": [
+            "adbverb",
+            "verb"
+        ]
+    },
+    {
+        "chinese": "suì",
+        "english": "age",
+        "sentence": "Tā érzi jīnnián shì suì le",
+        "english_sentence": "This year his son  is ten years old",
+        "categories": [
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "rìzi",
+        "english": "day(date) days(time)",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun",
+            ""
+        ]
+    },
+    {
+        "chinese": "gōngkè",
+        "english": "schoolwork",
+        "sentence": "Nèige xuèshēng gōngkè hěn hǎo",
+        "english_sentence": "That student's homework is very good",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "cōngmíng",
+        "english": "to be intelligent",
+        "sentence": "Cōngmíng de xuěshēng gōngkè dōu hǎo ma?",
+        "english_sentence": "Do intelligent students always do well in their homework?",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "yònggōng",
+        "english": "to be studious",
+        "sentence": "Lǎoshī xǐhuān yònggōng de xuéshēng",
+        "english_sentence": "Teachers like hard working students",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "niánjì",
+        "english": "age",
+        "sentence": "Tā fùmǔ niánjì dōu dàle",
+        "english_sentence": "Both of his parents are old",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "bùdéliǎo",
+        "english": "to be extremely",
+        "sentence": "Wàimiàn rède bùdéliǎo",
+        "english_sentence": "It is extremely hot outside",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "gèng",
+        "english": "even more, still more",
+        "sentence": "Zhèige cài hěn hǎochī. nèige cài gèng hǎocì",
+        "english_sentence": "This dish is delicious,(but) that dish is even better",
+        "categories": [
+            "adverb"
+        ]
+    },
+    {
+        "chinese": "jí",
+        "english": "extremely",
+        "sentence": "Nèige rèn shòujíle",
+        "english_sentence": "That person is extremely thin",
+        "categories": [
+            "BF"
+        ]
+    },
+    {
+        "chinese": "pàng",
+        "english": "to be fat",
+        "sentence": "Tā yǐqián hěn shòu, xiànzài pàngle",
+        "english_sentence": "Before he was very thin, now he's become fat",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "cháng",
+        "english": "to be long",
+        "sentence": "Zhèitiào hě bǐ něitiào cháng",
+        "english_sentence": "This river is longer than that one",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "ǎi",
+        "english": "to be short (opp to ga1o)",
+        "sentence": "Nà liǎngge rén, yíge gāo,yíge ǎi",
+        "english_sentence": "Of those two people, one is tall, the other is short",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "gōngfēn",
+        "english": "centimeter",
+        "sentence": "Zhèijiàn yīfú bǐ nèijiàn cháng shí gōngfēn",
+        "english_sentence": "This outfit is ten centimeters longer than that one",
+        "categories": [
+            "noun",
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "gōnglǐ",
+        "english": "kilomiter",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun",
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "yīnglǐ",
+        "english": "mile",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun",
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "gōngchī",
+        "english": "meter",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun",
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "yīngchǐ",
+        "english": "foot",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun",
+            "measure word"
+        ]
+    },
+    {
+        "chinese": "zhòng",
+        "english": "to be heavy",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "stative verb",
+            ""
+        ]
+    },
+    {
+        "chinese": "gōngjīn",
+        "english": "kilogram",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "noun"
+        ]
+    },
+    {
+        "chinese": "bèn",
+        "english": "to be stupid",
+        "sentence": "",
+        "english_sentence": "",
+        "categories": [
+            "stative verb"
+        ]
+    },
+    {
+        "chinese": "duǎn",
+        "english": "to be short (opp to cha2ng)",
+        "sentence": "Tā měicì xiěde xìn dōu hěn duǎn",
+        "english_sentence": "Every letter he writes is very short",
+        "categories": [
+            "stative verb"
+        ]
+    }
+]
